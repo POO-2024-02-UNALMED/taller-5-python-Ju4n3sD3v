@@ -1,15 +1,20 @@
 from animal import Animal
 class Anfibio(Animal):
     _listado = []
-    caballos = 0
-    leones = 0
-    _pelaje = True
-    _patas = 4
+    ranas = 0
+    salamandras = 0
+    _colorPiel = True
+    _venenoso = 4
 
-    def __init__(self, nombre, edad, habitat, genero, pelaje, patas):
-        super().__init__(nombre, edad, habitat, genero)
-        self._pelaje = pelaje
-        self._patas = patas
+    def __init__(self, nombre, edad, habitat, genero, colorPiel, venenoso):
+        self._nombre = nombre
+        self._edad = edad
+        self._habitat = habitat
+        self._genero = genero
+        self._colorPiel = colorPiel
+        self._venenoso = venenoso
+        Anfibio._listado.append(self)
+        Animal.setTotalAnimales(Animal.getTotalAnimales() + 1)
 
     def getListado(self):
         return self._listado
@@ -17,23 +22,34 @@ class Anfibio(Animal):
     def setListado(self, L: list) -> None:
         self._listado = L
 
-    def getPelaje(self):
-        return self._pelaje
+    def getColorPiel(self):
+        return self._colorPiel
     
-    def setPelaje(self, pe: bool) -> None:
-        self._pelaje = pe
+    def setColorPiel(self, pe: bool) -> None:
+        self._colorPiel = pe
 
-    def getPatas(self):
-        return self._patas
+    def getVenenoso(self):
+        return self._venenoso
     
-    def setPatas(self, pa: int) -> None:
-        self._patas = pa
+    def setVenenoso(self, pa: int) -> None:
+        self._venenoso = pa
 
-    def cantidadMamiferos(self) -> int:
-        pass
+    def cantidadAnfibios(self) -> int:
+        return len(self._listado)
 
-    def crearCaballo(self) -> Animal:
-        pass
+    @classmethod
+    def crearRana(cls, nombre, edad, genero) -> Animal:
+        cls._colorPiel = 'rojo'
+        cls._venenoso = True
+        cls.setHabitat(cls, 'selva')
+        return Anfibio(nombre, edad, cls.getHabitat(cls), genero, cls._colorPiel, cls._venenoso)
 
-    def crearLeon(self) -> Animal:
-        pass
+    @classmethod
+    def crearLeon(cls, nombre, edad, genero) -> Animal:
+        cls._colorPiel = 'negro y amarillo'
+        cls._venenoso = False
+        cls.setHabitat(cls, 'selva')
+        return Anfibio(nombre, edad, cls.getHabitat(cls), genero, cls._colorPiel, cls._venenoso)
+
+    def movimiento():
+        return 'saltar'

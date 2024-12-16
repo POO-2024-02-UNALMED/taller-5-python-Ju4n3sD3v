@@ -1,15 +1,18 @@
 from animal import Animal
 class Ave(Animal):
     _listado = []
-    caballos = 0
-    leones = 0
-    _pelaje = True
-    _patas = 4
+    halcones = 0
+    aguilas = 0
+    _colorPlumas = ''
 
-    def __init__(self, nombre, edad, habitat, genero, pelaje, patas):
-        super().__init__(nombre, edad, habitat, genero)
-        self._pelaje = pelaje
-        self._patas = patas
+    def __init__(self, nombre, edad, habitat, genero, colorPlumas):
+        self._nombre = nombre
+        self._edad = edad
+        self._habitat = habitat
+        self._genero = genero
+        self._colorPlumas = colorPlumas
+        Ave._listado.append(self)
+        Animal.setTotalAnimales(Animal.getTotalAnimales() + 1)
 
     def getListado(self):
         return self._listado
@@ -29,11 +32,20 @@ class Ave(Animal):
     def setPatas(self, pa: int) -> None:
         self._patas = pa
 
-    def cantidadMamiferos(self) -> int:
-        pass
+    def cantidadAves(self) -> int:
+        return len(self._listado)
 
-    def crearCaballo(self) -> Animal:
-        pass
+    @classmethod
+    def crearHalcon(cls, nombre, edad, genero) -> Animal:
+        cls._colorPlumas = 'cafe glorioso'
+        cls.setHabitat(cls, 'montanas')
+        return Ave(nombre, edad, cls.getHabitat(cls), genero, cls._pelaje, cls._patas)
 
-    def crearLeon(self) -> Animal:
-        pass
+    @classmethod
+    def crearAguila(cls, nombre, edad, genero) -> Animal:
+        cls._colorPlumas = 'blanco y amarillo'
+        cls.setHabitat(cls, 'montanas')
+        return Ave(nombre, edad, cls.getHabitat(cls), genero, cls._pelaje, cls._patas)
+
+    def movimiento():
+        return 'volar'

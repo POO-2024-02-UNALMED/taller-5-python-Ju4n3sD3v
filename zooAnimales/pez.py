@@ -1,15 +1,20 @@
 from animal import Animal
 class Pez(Animal):
     _listado = []
-    caballos = 0
-    leones = 0
-    _pelaje = True
-    _patas = 4
+    salmones = 0
+    bacalaos = 0
+    _colorEscamas = ''
+    _cantidadAletas = 0
 
     def __init__(self, nombre, edad, habitat, genero, pelaje, patas):
-        super().__init__(nombre, edad, habitat, genero)
-        self._pelaje = pelaje
-        self._patas = patas
+        self._nombre = nombre
+        self._edad = edad
+        self._habitat = habitat
+        self._genero = genero
+        self._colorEscamas = pelaje
+        self._cantidadAletas = patas
+        Pez._listado.append(self)
+        Animal.setTotalAnimales(Animal.getTotalAnimales() + 1)
 
     def getListado(self):
         return self._listado
@@ -17,23 +22,34 @@ class Pez(Animal):
     def setListado(self, L: list) -> None:
         self._listado = L
 
-    def getPelaje(self):
-        return self._pelaje
+    def getColorEscamas(self):
+        return self._colorEscamas
     
-    def setPelaje(self, pe: bool) -> None:
-        self._pelaje = pe
+    def setColorEscamas(self, pe: bool) -> None:
+        self._colorEscamas = pe
 
-    def getPatas(self):
-        return self._patas
+    def getCantidadAletas(self):
+        return self._cantidadAletas
     
-    def setPatas(self, pa: int) -> None:
-        self._patas = pa
+    def setAletas(self, pa: int) -> None:
+        self._cantidadAletas = pa
 
-    def cantidadMamiferos(self) -> int:
-        pass
+    def cantidadPeces(self) -> int:
+        return len(self._listado)
 
-    def crearCaballo(self) -> Animal:
-        pass
+    @classmethod
+    def crearSalmon(cls, nombre, edad, genero) -> Animal:
+        cls._colorEscamas = 'rojo'
+        cls._cantidadAletas = 6
+        cls.setHabitat(cls, 'oceano')
+        return Pez(nombre, edad, cls.getHabitat(cls), genero, cls._colorEscamas, cls._cantidadAletas)
 
-    def crearLeon(self) -> Animal:
-        pass
+    @classmethod
+    def crearBacalao(cls, nombre, edad, genero) -> Animal:
+        cls._colorEscamas = 'gris'
+        cls._cantidadAletas = 6
+        cls.setHabitat(cls, 'oceano')
+        return Pez(nombre, edad, cls.getHabitat(cls), genero, cls._colorEscamas, cls._cantidadAletas)
+
+    def movimiento():
+        return 'nadar'

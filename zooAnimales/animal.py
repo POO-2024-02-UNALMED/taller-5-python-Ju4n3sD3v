@@ -1,9 +1,3 @@
-from .mamifero import Mamifero
-from .ave import Ave
-from .reptil import Reptil
-from .pez import Pez
-from .anfibio import Anfibio
-
 class Animal():
     _totalAnimales = 0
 
@@ -13,6 +7,7 @@ class Animal():
         self._habitat = habitat
         self._genero = genero
         self._zona = None
+        Animal._totalAnimales += 1
 
     def getNombre(self):
         return self._nombre
@@ -38,7 +33,20 @@ class Animal():
     def setGenero(self, g: str) -> None:
         self._genero = g
 
+    @classmethod
+    def getTotalAnimales(cls):
+        return cls._TotalAnimales
+    
+    @classmethod
+    def setTotalAnimales(cls, t: int) -> None:
+        cls._TotalAnimales = t
+
     def totalPorTipo(self):
+        from .mamifero import Mamifero
+        from .ave import Ave
+        from .reptil import Reptil
+        from .pez import Pez
+        from .anfibio import Anfibio
 
         ml = Mamifero.getListado()
         al = Ave.getListado()

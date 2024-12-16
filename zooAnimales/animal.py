@@ -41,7 +41,8 @@ class Animal():
     def setTotalAnimales(cls, t: int) -> None:
         cls._totalAnimales = t
 
-    def totalPorTipo(self):
+    @classmethod
+    def totalPorTipo():
         from .mamifero import Mamifero
         from .ave import Ave
         from .reptil import Reptil

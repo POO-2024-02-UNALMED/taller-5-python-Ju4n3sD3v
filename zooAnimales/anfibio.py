@@ -46,7 +46,7 @@ class Anfibio(Animal):
         return Anfibio(nombre, edad, cls.getHabitat(cls), genero, cls._colorPiel, cls._venenoso)
 
     @classmethod
-    def crearLeon(cls, nombre, edad, genero) -> Animal:
+    def crearSalamandra(cls, nombre, edad, genero) -> Animal:
         cls._colorPiel = 'negro y amarillo'
         cls._venenoso = False
         cls.setHabitat(cls, 'selva')

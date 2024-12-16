@@ -51,3 +51,4 @@ class Mamifero(Animal):
         cls._patas = 4
         cls.setHabitat(cls, 'selva')
         return Mamifero(nombre, edad, cls.getHabitat(cls), genero, cls._pelaje, cls._patas)
+    

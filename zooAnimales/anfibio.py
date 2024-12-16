@@ -54,3 +54,4 @@ class Anfibio(Animal):
 
     def movimiento():
         return 'saltar'
+    

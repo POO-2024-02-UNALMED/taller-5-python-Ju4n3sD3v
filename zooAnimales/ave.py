@@ -34,14 +34,16 @@ class Ave(Animal):
     def crearHalcon(cls, nombre, edad, genero) -> Animal:
         cls._colorPlumas = 'cafe glorioso'
         cls.setHabitat(cls, 'montanas')
-        return Ave(nombre, edad, cls.getHabitat(cls), genero, cls._pelaje, cls._patas)
+        return Ave(nombre, edad, cls.getHabitat(cls), genero, cls._colorPlumas)
 
     @classmethod
     def crearAguila(cls, nombre, edad, genero) -> Animal:
         cls._colorPlumas = 'blanco y amarillo'
         cls.setHabitat(cls, 'montanas')
-        return Ave(nombre, edad, cls.getHabitat(cls), genero, cls._pelaje, cls._patas)
+        return Ave(nombre, edad, cls.getHabitat(cls), genero, cls._colorPlumas)
 
     def movimiento():
         return 'volar'
     
+    def toString(self):
+        return f'Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}'

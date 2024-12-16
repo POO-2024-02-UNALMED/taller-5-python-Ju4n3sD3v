@@ -23,7 +23,7 @@ class Mamifero(Animal):
     def setListado(self, L: list) -> None:
         self._listado = L
 
-    def getPelaje(self):
+    def isPelaje(self):
         return self._pelaje
     
     def setPelaje(self, pe: bool) -> None:

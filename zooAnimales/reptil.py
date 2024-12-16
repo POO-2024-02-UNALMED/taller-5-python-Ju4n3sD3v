@@ -23,16 +23,16 @@ class Reptil(Animal):
     def setListado(self, L: list) -> None:
         self._listado = L
 
-    def getcolorEscamas(self):
+    def getColorEscamas(self):
         return self._colorEscamas
     
-    def setcolorEscamas(self, pe: bool) -> None:
+    def setColorEscamas(self, pe: bool) -> None:
         self._colorEscamas = pe
 
-    def getlargoCola(self):
+    def getLargoCola(self):
         return self._largoCola
     
-    def setlargoCola(self, pa: int) -> None:
+    def setLargoCola(self, pa: int) -> None:
         self._largoCola = pa
 
     def cantidadReptiles(self) -> int:

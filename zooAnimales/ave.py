@@ -21,17 +21,11 @@ class Ave(Animal):
     def setListado(self, L: list) -> None:
         self._listado = L
 
-    def getPelaje(self):
+    def getColorPlumas(self):
         return self._pelaje
     
-    def setPelaje(self, pe: bool) -> None:
-        self._pelaje = pe
-
-    def getPatas(self):
-        return self._patas
-    
-    def setPatas(self, pa: int) -> None:
-        self._patas = pa
+    def setColorPlumas(self, pe: bool) -> None:
+        self._colorPlumas = pe
 
     def cantidadAves(self) -> int:
         return len(self._listado)

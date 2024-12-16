@@ -44,6 +44,7 @@ class Pez(Animal):
         cls._colorEscamas = 'rojo'
         cls._cantidadAletas = 6
         cls.setHabitat(cls, 'oceano')
+        Pez.salmones += 1
         return Pez(nombre, edad, cls.getHabitat(cls), genero, cls._colorEscamas, cls._cantidadAletas)
 
     @classmethod
@@ -51,6 +52,7 @@ class Pez(Animal):
         cls._colorEscamas = 'gris'
         cls._cantidadAletas = 6
         cls.setHabitat(cls, 'oceano')
+        Pez.bacalaos += 1
         return Pez(nombre, edad, cls.getHabitat(cls), genero, cls._colorEscamas, cls._cantidadAletas)
 
     def movimiento():

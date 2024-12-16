@@ -44,6 +44,7 @@ class Anfibio(Animal):
         cls._colorPiel = 'rojo'
         cls._venenoso = True
         cls.setHabitat(cls, 'selva')
+        Anfibio.ranas += 1
         return Anfibio(nombre, edad, cls.getHabitat(cls), genero, cls._colorPiel, cls._venenoso)
 
     @classmethod
@@ -51,6 +52,7 @@ class Anfibio(Animal):
         cls._colorPiel = 'negro y amarillo'
         cls._venenoso = False
         cls.setHabitat(cls, 'selva')
+        Anfibio.salamandras += 1
         return Anfibio(nombre, edad, cls.getHabitat(cls), genero, cls._colorPiel, cls._venenoso)
 
     def movimiento():

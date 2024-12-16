@@ -44,6 +44,7 @@ class Reptil(Animal):
         cls._colorEscamas = 'verde'
         cls._largoCola = 3
         cls.setHabitat(cls, 'humedal')
+        Reptil.iguanas += 1
         return Reptil(nombre, edad, cls.getHabitat(cls), genero, cls._colorEscamas, cls._largoCola)
 
     @classmethod
@@ -51,6 +52,7 @@ class Reptil(Animal):
         cls._colorEscamas = 'blanco'
         cls._largoCola = 1
         cls.setHabitat(cls, 'jungla')
+        Reptil.serpientes += 1
         return Reptil(nombre, edad, cls.getHabitat(cls), genero, cls._colorEscamas, cls._largoCola)
 
     def movimiento():

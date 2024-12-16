@@ -44,6 +44,7 @@ class Mamifero(Animal):
         cls._pelaje = True
         cls._patas = 4
         cls.setHabitat(cls, 'pradera')
+        Mamifero.caballos += 1
         return Mamifero(nombre, edad, cls.getHabitat(cls), genero, cls._pelaje, cls._patas)
 
     @classmethod
@@ -51,5 +52,6 @@ class Mamifero(Animal):
         cls._pelaje = True
         cls._patas = 4
         cls.setHabitat(cls, 'selva')
+        Mamifero.leones += 1
         return Mamifero(nombre, edad, cls.getHabitat(cls), genero, cls._pelaje, cls._patas)
     

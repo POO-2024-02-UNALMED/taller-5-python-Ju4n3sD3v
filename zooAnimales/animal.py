@@ -33,6 +33,12 @@ class Animal():
     def setGenero(self, g: str) -> None:
         self._genero = g
 
+    def getZona(self):
+        return self._zona
+    
+    def setZona(self, z: str) -> None:
+        self._zona = z
+
     @classmethod
     def getTotalAnimales(cls):
         return cls._totalAnimales

@@ -35,11 +35,11 @@ class Animal():
 
     @classmethod
     def getTotalAnimales(cls):
-        return cls._TotalAnimales
+        return cls._totalAnimales
     
     @classmethod
     def setTotalAnimales(cls, t: int) -> None:
-        cls._TotalAnimales = t
+        cls._totalAnimales = t
 
     def totalPorTipo(self):
         from .mamifero import Mamifero

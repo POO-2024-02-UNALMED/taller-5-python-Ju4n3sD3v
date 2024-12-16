@@ -22,7 +22,7 @@ class Zona():
         self._nombre = nombre
 
     def getZoo(self):
-        return self._nombre
+        return self._zoo
     
     def setZoo(self, zoo):
         self._zoo = zoo

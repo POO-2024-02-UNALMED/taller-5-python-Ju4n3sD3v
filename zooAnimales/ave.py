@@ -22,7 +22,7 @@ class Ave(Animal):
         self._listado = L
 
     def getColorPlumas(self):
-        return self._pelaje
+        return self._colorPlumas
     
     def setColorPlumas(self, pe: bool) -> None:
         self._colorPlumas = pe

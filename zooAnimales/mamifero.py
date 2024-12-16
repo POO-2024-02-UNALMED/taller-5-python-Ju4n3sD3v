@@ -17,8 +17,9 @@ class Mamifero(Animal):
         Mamifero._listado.append(self)
         Animal.setTotalAnimales(Animal.getTotalAnimales() + 1)
 
-    def getListado(self):
-        return self._listado
+    @classmethod
+    def getListado(cls):
+        return cls._listado
     
     def setListado(self, L: list) -> None:
         self._listado = L
